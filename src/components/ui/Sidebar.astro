@@ -1,0 +1,41 @@
+---
+
+---
+
+<aside class="hidden absolute right-0" id="sidebar">
+  <nav>
+    <ul
+      class="flex flex-col gap-3 p-2 font-medium bg-[#f0efef] dark:bg-tertiary text-gray-600 dark:text-white/80"
+    >
+      <li><a href="#">Producto</a></li>
+      <li><a href="#regions_id">Regiones</a></li>
+      <li><a href="#people_id">Personas</a></li>
+      <li><a href="#characteristics_id">Características</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<style>
+  ul li {
+    list-style: none;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  ul li:hover {
+    background-color: #a8a8a8;
+  }
+</style>
+
+<script>
+  const menuButton = document.getElementById("menu-button");
+  if (menuButton) {
+    menuButton.addEventListener("click", () => {
+      const sidebar = document.getElementById("sidebar");
+      if (sidebar) {
+        const isOpen = sidebar.classList.toggle("show-sidebar");
+        const display = isOpen ? "inline" : "none";
+        sidebar.style.display = display;
+      }
+    });
+  }
+</script>
