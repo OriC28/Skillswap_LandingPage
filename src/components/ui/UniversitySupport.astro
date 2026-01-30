@@ -1,0 +1,74 @@
+---
+import Region from "../Region.astro";
+
+const regions = [
+  {
+    stateName: "Los Llanos",
+    width: "40.83",
+    porcentage: "20.83%",
+  },
+  {
+    stateName: "Capital",
+    width: "30.50",
+    porcentage: "12.50%",
+  },
+  {
+    stateName: "Oriental",
+    width: "30.50",
+    porcentage: "12.50%",
+  },
+  {
+    stateName: "Guayana",
+    width: "30.50",
+    porcentage: "12.50%",
+  },
+  {
+    stateName: "Los Andes",
+    width: "20.50",
+    porcentage: "12.50%",
+  },
+  {
+    stateName: "Central",
+    width: "15.33",
+    porcentage: "8.33%",
+  },
+  {
+    stateName: "Occidental",
+    width: "15.33",
+    porcentage: "8.33%",
+  },
+  {
+    stateName: "Centro-Occidental",
+    width: "15.33",
+    porcentage: "8.33%",
+  },
+  {
+    stateName: "Insular",
+    width: "10.17",
+    porcentage: "4.17%",
+  },
+];
+---
+
+<section class="flex flex-col gap-3 p-3 w-full dark:bg-primary" id="regions_id">
+  <div
+    class="flex items-center flex-col gap-3 p-10 rounded-md dark:border dark:border-neutral-600 w-full dark:bg-neutral-800"
+  >
+    <h1
+      class="text-4xl font-extrabold text-gray-700 text-center dark:text-white/80 whitespace-pre-line word-break-all"
+    >
+      Soporte para las UNEFA de todas las regiones de Venezuela
+    </h1>
+    <h2 class="text-2xl text-center text-[#F26A8D] font-semibold">
+      Distribución porcentual por Región
+    </h2>
+    <div class="flex flex-col gap-3 mx-4 w-full md:items-center">
+      <!-- REGION -->
+      {
+        regions.map((region) => {
+          return <Region {...region} />;
+        })
+      }
+    </div>
+  </div>
+</section>

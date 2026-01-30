@@ -1,0 +1,28 @@
+---
+import StartButton from "./StartButton.astro";
+---
+
+<section
+  class="flex items-center text-center justify-center p-9 dark:text-white/80 w-full"
+>
+  <div class="flex flex-col gap-4 md:mt-17">
+    <div
+      class="text-4xl font-extrabold w-fit mx-auto text-center text-gray-700 dark:text-white/80 md:text-7xl"
+    >
+      <h1>Intercambia Conocimientos</h1>
+      <span class="text-[#45d4c1]"> Sin Límites </span>
+    </div>
+    <p class="text-lg whitespace-pre-line word-break-all">
+      Plataforma web de intercambio de habilidades desarrollada para estudiantes
+      universitarios (principalmente de la UNEFA).
+    </p>
+    <div class="flex items-center justify-center gap-2">
+      <StartButton hidden={false} />
+      <button
+        class="bg-gray-400 border border-gray-500 p-2 rounded-md font-semibold text-white cursor-pointer hover:brightness-110 hover:border-gray-300 transition-all duration-300 ease-in active:scale-90
+        md:block"
+        >Ver demo</button
+      >
+    </div>
+  </div>
+</section>

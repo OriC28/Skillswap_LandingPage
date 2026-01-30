@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <script is:inline>
+      const theme = localStorage.getItem("theme");
+      if (
+        theme === "dark" ||
+        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <title>Skillswap</title>
+  </head>
+  <body>
+    <main class="dark:bg-primary animate-range-gradual">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  html,
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: 100vh;
+  }
+</style>
+
+<script is:inline>
+  const button = document.getElementById("themeToggle");
+  const lightIcon = button.querySelector(".light");
+  const darkIcon = button.querySelector(".dark");
+
+  const logoLightIcon = document.querySelectorAll(".logo-light");
+  const logoDarkIcon = document.querySelectorAll(".logo-dark");
+
+  const menuIcon = document.querySelector(".menu");
+
+  const githubLightIcon = document.querySelector(".github-light");
+  const githubDarkIcon = document.querySelector(".github-dark");
+
+  const toggleTheme = () => {
+    const isDarkMode = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    updateIcons(isDarkMode);
+  };
+
+  const updateIcons = (isDarkMode) => {
+    if (isDarkMode) {
+      // Switch button icons
+      lightIcon.style.display = "none";
+      darkIcon.style.display = "inline";
+
+      // Logos icons
+      logoLightIcon.forEach((el) => (el.style.display = "none"));
+      logoDarkIcon.forEach((el) => (el.style.display = "inline"));
+
+      // Menu icons
+      menuIcon.style.color = "white";
+
+      // Github icons
+      githubLightIcon.style.display = "none";
+      githubDarkIcon.style.display = "inline";
+    } else {
+      // Switch button icons
+      lightIcon.style.display = "inline";
+      darkIcon.style.display = "none";
+
+      // Logos icons
+      logoLightIcon.forEach((el) => (el.style.display = "inline"));
+      logoDarkIcon.forEach((el) => (el.style.display = "none"));
+      // Menu icons
+      menuIcon.style.color = "#222";
+
+      // Github icons
+      githubLightIcon.style.display = "inline";
+      githubDarkIcon.style.display = "none";
+    }
+  };
+
+  updateIcons(document.documentElement.classList.contains("dark"));
+
+  button.addEventListener("click", toggleTheme);
+
+  document.addEventListener("astro:page-load", () => {
+    const button = document.getElementById("theme-toggle");
+    if (button) {
+      button.addEventListener("click", toggleTheme);
+      updateIcons(document.documentElement.classList.contains("dark"));
+    }
+  });
+</script>

@@ -1,0 +1,69 @@
+---
+import Image from "astro/components/Image.astro";
+import logoLight from "../../assets/logo-black.png";
+import logoDark from "../../assets/logo-white.png";
+---
+
+<footer
+  class="flex flex-col gap-10 p-6 md:flex-wrap md:items-center md:p-2 md:gap-4 md:justify-around text-gray-600 bg-[#f0efef] dark:bg-secondary dark:text-white/80"
+>
+  <div class="md:p-3">
+    <Image
+      src={logoLight}
+      alt="Logotipo Skillswap"
+      class="logo-light cursor-pointer"
+      width={120}
+      height={24}
+    />
+    <Image
+      src={logoDark}
+      alt="Logotipo Skillswap"
+      class="logo-dark cursor-pointer"
+      width={123}
+      height={24}
+    />
+  </div>
+  <div
+    class="flex flex-col gap-4 md:gap-3 md:flex-row md:justify-around md:w-full"
+  >
+    <!-- ABOUT US -->
+    <div>
+      <h6 class="font-semibold text-xl text-[#f26a8d] py-2">Sobre nosotros</h6>
+      <ul class="flex flex-col gap-3 text-md">
+        <li><a href="#">Características</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Terminos y Servicios</a></li>
+        <li><a href="#">Políticas de Privacidad</a></li>
+        <li><a href="#">Contáctanos</a></li>
+      </ul>
+    </div>
+    <!-- ABOUT US -->
+    <div>
+      <h6 class="font-semibold text-xl text-[#f26a8d] py-2">Recursos</h6>
+      <ul class="flex flex-col gap-3 text-md">
+        <li><a href="#">Apoyo</a></li>
+        <li><a href="#">Estado del sistema</a></li>
+        <li><a href="#">Conviérte en Socio</a></li>
+        <li><a href="#">Integraciones</a></li>
+        <li><a href="#">Activos de marca</a></li>
+        <li><a href="#">Seguridad y cumplimiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="text-neutral-600" />
+  <div class="flex flex-col gap-4 text-center self-center">
+    <span>&copy Skillswap. 2025</span>
+    <small class="text-neutral-400">Don't forget to learn</small>
+  </div>
+</footer>
+
+<style>
+  ul li {
+    list-style: none;
+    transition: color 0.3s ease-in-out;
+  }
+  ul li:hover {
+    color: #f26a8d;
+  }
+</style>

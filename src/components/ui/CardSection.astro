@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import programmerPhoto from "../../assets/programmer.jpg";
+import designerPhoto from "../../assets/designer.jpg";
+import videoEditionPhoto from "../../assets/video-edition.jpg";
+import Card from "../Card.astro";
+
+const data = [
+  {
+    photo: programmerPhoto,
+    title:
+      "Programadores con potencial para resolver tus problemas o ayudarte a aprender",
+    specialty: "Programador",
+  },
+  {
+    photo: designerPhoto,
+    title: "Increibles diseñadores gráficos listos para ayudarte.",
+    specialty: "Diseñador Gráfico",
+  },
+  {
+    photo: videoEditionPhoto,
+    title:
+      "Editores de vídeos que pueden ayudarte con cualquier postproducción",
+    specialty: "Edición de Vídeos",
+  },
+];
+---
+
+<section class="flex flex-col gap-3 p-6 w-full dark:bg-primary" id="people_id">
+  <h1
+    class="text-4xl font-extrabold text-gray-700 text-center dark:text-white/80"
+  >
+    <span class="text-[#F26A8D]">Enseña</span> lo que sabes.
+  </h1>
+
+  <h1
+    class="text-4xl font-extrabold text-gray-700 text-center dark:text-white/80"
+  >
+    Aprende lo que <span class="text-[#90D8CEff]">quieres</span>
+  </h1>
+  <div class="flex flex-col gap-3">
+    <h2 class="text-2xl text-center text-[#F26A8D] font-semibold">
+      Conecta con estudiantes iguales a ti
+    </h2>
+    <div
+      class="flex flex-col p-3 gap-4 w-full md:grid md:grid-cols-3 md:h-full md:items-center"
+    >
+      <!-- CARDS -->
+      {
+        data.map((item) => {
+          return <Card {...item} />;
+        })
+      }
+    </div>
+  </div>
+</section>

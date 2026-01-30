@@ -1,0 +1,71 @@
+---
+import Image from "astro/components/Image.astro";
+import logoLight from "../../assets/logo-black.png";
+import logoDark from "../../assets/logo-white.png";
+import { Icon } from "astro-icon/components";
+import StartButton from "./StartButton.astro";
+import DarkModeButton from "./DarkModeButton.astro";
+---
+
+<header
+  class="flex justify-between items-center py-3 px-4 bg-[#f0efef] md:justify-around md:px-3 dark:bg-primary dark:border-b-neutral-600 dark:border-b"
+>
+  <div class="flex items-center justify-center gap-8">
+    <Image
+      src={logoLight}
+      alt="Logotipo Skillswap"
+      class="logo-light cursor-pointer"
+      width={123}
+      height={24}
+    />
+    <Image
+      src={logoDark}
+      alt="Logotipo Skillswap"
+      class="logo-dark cursor-pointer"
+      width={123}
+      height={24}
+    />
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 font-medium text-gray-600 dark:text-white/80">
+        <li><a href="#">Producto</a></li>
+        <li><a href="#regions_id">Regiones</a></li>
+        <li><a href="#people_id">Personas</a></li>
+        <li><a href="#characteristics_id">Características</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="flex items-center justify-center gap-3">
+    <a
+      href="https://github.com/OriC28/skillswap"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div
+        class="group flex items-center gap-3 p-3 rounded-md hover:bg-[#e4e4e4] transition-all duration-300 ease-in cursor-pointer dark:hover:bg-[#353535]"
+      >
+        <Icon name="github-light" width={24} height={24} class="github-light" />
+        <Icon name="github-dark" width={24} height={24} class="github-dark" />
+      </div>
+    </a>
+    <StartButton hidden={true} />
+    <DarkModeButton />
+    <div class="flex items-center">
+      <Icon
+        name="bars-solid-dark"
+        width={24}
+        height={24}
+        class="menu p-2 rounded-md hover:bg-[#353535] transition-all duration-300 ease-in cursor-pointer size-full md:hidden"
+      />
+    </div>
+  </div>
+</header>
+
+<style>
+  ul li {
+    list-style: none;
+    transition: color 0.3s ease-in-out;
+  }
+  ul li:hover {
+    color: #f26a8d;
+  }
+</style>
