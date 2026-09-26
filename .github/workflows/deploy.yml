@@ -28,6 +28,7 @@ jobs:
         uses: withastro/action@v3
         with:
           path: ${{ env.BUILD_PATH }}
+          package-manager: pnpm
 
   deploy:
     environment:
