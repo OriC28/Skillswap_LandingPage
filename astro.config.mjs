@@ -5,7 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/static/",
+  site: "https://OriC28.github.io",
+  base: "/Skillswap_LandingPage",
   vite: {
     plugins: [tailwindcss()],
   },
