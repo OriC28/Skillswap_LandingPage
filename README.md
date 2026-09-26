@@ -1,46 +1,46 @@
-# Astro Starter Kit: Basics
+# Skillswap - Landing Page
 
-```sh
-npm create astro@latest -- --template basics
-```
+Plataforma web de intercambio de habilidades desarrollada para estudiantes universitarios (principalmente de la UNEFA). 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Esta es la *landing page* oficial del proyecto, diseñada para presentar las características de la plataforma, que permite a los estudiantes enseñar lo que saben y aprender lo que necesitan conectando con otros compañeros.
 
-## 🚀 Project Structure
+## Stack Tecnológico
 
-Inside of your Astro project, you'll see the following folders and files:
+Este repositorio contiene la web estática, construida con las siguientes tecnologías:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- **Framework:** [Astro](https://astro.build/)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+- **Iconos:** Astro Icon
+- **Gestor de paquetes:** pnpm
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Vistas Previas
 
-## 🧞 Commands
+### Modo Oscuro
+![Skillswap Modo Oscuro](./public/screenshots/dark-mode.png)
 
-All commands are run from the root of the project, from a terminal:
+### Modo Claro
+![Skillswap Modo Claro](./public/screenshots/light-mode.png)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Instalación y Ejecución Local
 
-## 👀 Want to learn more?
+Sigue estos pasos para correr la landing page en tu computadora:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Clona el repositorio:
+   ```bash
+   git clone git@github.com:OriC28/Skillswap_LandingPage.git
+   ```
+
+2. Instala las dependencias (recomendado usar `pnpm`):
+   ```bash
+   pnpm install
+   ```
+
+3. Inicia el servidor de desarrollo:
+   ```bash
+   pnpm run dev
+   ```
+
+4. Abre tu navegador en `http://localhost:4321` para ver la página.
+
+---
+*Intercambia Conocimientos Sin Límites*
